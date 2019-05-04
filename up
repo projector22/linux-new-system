@@ -1,0 +1,7 @@
+sudo apt update
+sudo apt list --upgradable
+sudo apt -f install
+sudo apt update
+sudo apt upgrade -yy
+sudo apt autoremove -yy
+sudo apt clean -yy

@@ -1,7 +1,0 @@
-sudo apt update
-sudo apt list --upgradable
-sudo apt -f install
-sudo apt update
-echo -e "y" | sudo apt upgrade
-echo -e "y" | sudo apt autoremove
-echo -e "y" | sudo apt clean
