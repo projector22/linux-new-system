@@ -15,5 +15,7 @@ echo "Replace the 127.0.0.1 with 192.168.1.0/24
 sudo nano /etc/httpd/conf.d/phpMyAdmin.conf
 sudo systemctl restart httpd
 
+sudo yum install mariadb-server
+
 # https://serverfault.com/questions/707763/samba-not-allowing-access-to-var-www-folder
 sudo setenforce 0
