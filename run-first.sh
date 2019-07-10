@@ -5,4 +5,4 @@
 cd
 mkdir bin
 
-
+git clone https://github.com/projector22/linux-new-system.git .
