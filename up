@@ -1,13 +1,21 @@
-sudo apt update
-sudo apt list --upgradable
-sudo apt -f install
-sudo apt update
-sudo apt upgrade -yy
-sudo apt autoremove -yy
-sudo apt clean -yy
+#!/bin/bash
+echo Checking for updates - Apt, Yum, Flatpack
+
+if hash apt 2>/dev/null; then
+  sudo apt update
+  sudo apt list --upgradable
+  sudo apt -f install
+  sudo apt update
+  sudo apt upgrade -yy
+  sudo apt autoremove -yy
+  sudo apt clean -yy
+fi
+
+if hash yum 2>/dev/null; then
+  sudo yum update -yy  
+fi
+
 if hash flatpak 2>/dev/null; then
   sudo flatpak update -yy
-else
-  echo Flatpak not installed
 fi
 echo Update complete
