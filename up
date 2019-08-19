@@ -18,4 +18,9 @@ fi
 if hash flatpak 2>/dev/null; then
   sudo flatpak update -yy
 fi
+
+if hash pihole 2>/dev/null; then
+  pihole -up
+fi
+
 echo Update complete
