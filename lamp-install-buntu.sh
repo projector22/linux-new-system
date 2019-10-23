@@ -5,23 +5,16 @@ echo "Installing & setting up LAMP"
 sudo apt update
 
 # Check to see if tasksel is installed
-if hash tasksel 2>/dev/null; then
-  sudo apt install tasksel -yy
-fi
+sudo apt install tasksel -yy
 
 # Install the lamp stack
-sudo tasksel install lamp-server -yy
+sudo tasksel install lamp-server
 
 echo "Starting MySQL & Apache2 services"
 
 # Start the apache2 and mysql service
-if hash systemctl 2>/dev/null; then
-  sudo systemctl start apache2.service
-  sudo systemctl start mysql.service
-else
-  sudo service mysql start
-  sudo service apache2 start
-fi 
+sudo systemctl start apache2.service || sudo service mysql start
+sudo systemctl start mysql.service || sudo service apache2 start
 
 echo "Allow Apache2 through the firewall"
 
@@ -54,8 +47,4 @@ echo "Setting up phpMyAdmin"
 sudo apt install phpmyadmin -y
 
 # Restart apache2 service
-if hash systemctl 2>/dev/null; then
-  sudo systemctl restart apache2
-else
-  sudo service apache2 restart
-fi
+sudo systemctl restart apache2 || sudo service apache2 restart
