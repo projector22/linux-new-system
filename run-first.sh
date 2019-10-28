@@ -5,6 +5,12 @@
 sudo apt install git -yy
 sudo apt install openssh-server -yy
 sudo apt install curl -yy
+sudo apt install flatpak -yy
+sudo apt install gnome-software-plugin-flatpak -yy
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+
+
 
 echo "Enter a Git global name"
 read name
