@@ -23,10 +23,10 @@ if hash pihole 2>/dev/null; then
   pihole -up
 fi
 
-if hash pip 2>/dev/null; then
-  sudo python3 -m pip install -U pip
-  pip3 install pip-review
-  sudo python3 -m pip_review --local --auto
-fi
+# if hash pip 2>/dev/null; then
+#   sudo python3 -m pip install -U pip
+#   pip3 install pip-review
+#   sudo python3 -m pip_review --local --auto
+# fi
 
 echo Update complete
