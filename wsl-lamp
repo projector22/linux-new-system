@@ -1,0 +1,26 @@
+#!/bin/bash
+
+case $1 in
+    --start)
+    echo "Starting Apache2 & MySQL"
+    sudo service apache2 start
+    sudo service mysql start
+    ;;
+
+    --stop)
+    echo "Stopping Apache2 & MySQL"
+    sudo service apache2 stop
+    sudo service mysql stop
+    sudo cron
+    ;;
+
+    --restart)
+    echo "Restarting Apache2 & MySQL"
+    sudo service apache2 restart
+    sudo service mysql restart
+    ;;
+
+    *)
+    echo "Invalid flag. Use either --start, --stop or --restart"
+    ;;
+esac
