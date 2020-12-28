@@ -13,11 +13,11 @@ clear
 while true 
 do
     echo "Choose a project"
-    echo "1. Lourie Registration System"
-    echo "2. Albatross School Counsellor Booking System"
-    echo "3. Active Directory Tools"
-    echo "4. Marks Email System"
-    echo "4. Linux New System"
+    echo -e "1.\tLourie Registration System"
+    echo -e "2.\tAlbatross School Counsellor Booking System"
+    echo -e "3.\tActive Directory Tools"
+    echo -e "4.\tMarks Email System"
+    echo -e "5.\tLinux New System"
     read -p "Choice: " uri_choice
     case ${uri_choice} in
         1)
@@ -59,9 +59,9 @@ done
 
 while true 
 do
-    echo "\nClone into current folder or into the project's own folder"
-    echo "1. Current folder (${PWD})"
-    echo "2. Project folder (${PWD}/${project_name})"
+    echo -e "\nClone into current folder or into the project's own folder"
+    echo -e "1.\tCurrent folder (${PWD})"
+    echo -e "2.\tProject folder (${PWD}/${project_name})"
     read -p "Choice: " folder_choice
     case ${folder_choice} in
         1)
@@ -75,7 +75,7 @@ do
         ;;
 
         *)
-        echo "\nInvalid choice..."
+        echo -e "\nInvalid choice..."
     esac
 done
 
@@ -95,7 +95,7 @@ then
     read ssh_key
 fi
 
-echo "\nExecuting command"
+echo -e "\nExecuting command"
 echo "https://projector22:${ssh_key}${uri}${folder}"
 
 # Execute the clone
