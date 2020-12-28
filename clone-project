@@ -95,7 +95,7 @@ then
     read -p "Please enter your SSH Key: " ssh_key
 fi
 
-echo -e "\nExecuting command"
+echo -e "\nExecuting command:"
 echo "https://projector22:${ssh_key}${uri}${folder}"
 
 # Execute the clone
