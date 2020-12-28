@@ -13,11 +13,11 @@ clear
 while true 
 do
     echo "Choose a project"
-    echo "1.\tLourie Registration System"
-    echo "2.\tAlbatross School Counsellor Booking System"
-    echo "3.\tActive Directory Tools"
-    echo "4.\tMarks Email System"
-    echo "4.\tLinux New System"
+    echo "1. Lourie Registration System"
+    echo "2. Albatross School Counsellor Booking System"
+    echo "3. Active Directory Tools"
+    echo "4. Marks Email System"
+    echo "4. Linux New System"
     read -p "Choice: " uri_choice
     case ${uri_choice} in
         1)
@@ -60,8 +60,8 @@ done
 while true 
 do
     echo "\nClone into current folder or into the project's own folder"
-    echo "1.\tCurrent folder (${PWD})"
-    echo "2.\tProject folder (${PWD}/${project_name})"
+    echo "1. Current folder (${PWD})"
+    echo "2. Project folder (${PWD}/${project_name})"
     read -p "Choice: " folder_choice
     case ${folder_choice} in
         1)
