@@ -89,10 +89,10 @@ case $1 in
     ;;
 esac
 
-if test -z "$ssh_key"
+if test -z "$ssh_key" # Check if ssh_key has been set
 then
-    echo -e "\nPlease enter your SSH Key:"
-    read ssh_key
+    echo -e "\n"
+    read -p "Please enter your SSH Key: " ssh_key
 fi
 
 echo -e "\nExecuting command"
