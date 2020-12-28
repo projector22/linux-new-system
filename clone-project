@@ -91,7 +91,7 @@ esac
 
 if test -z "$ssh_key"
 then
-    echo "Please enter your SSH Key:"
+    echo -e "\nPlease enter your SSH Key:"
     read ssh_key
 fi
 
