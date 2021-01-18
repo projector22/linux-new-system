@@ -18,6 +18,7 @@ do
     echo -e "3.\tActive Directory Tools"
     echo -e "4.\tMarks Email System"
     echo -e "5.\tLinux New System"
+    echo -e "6.\tLourie Basic Framework"
     read -p "Choice: " uri_choice
     case ${uri_choice} in
         1)
@@ -47,6 +48,12 @@ do
         5)
         uri="@github.com/projector22/linux-new-system.git"
         project_name="linux-new-system"
+        break
+        ;;
+
+        6)
+        uri="@gitlab.com/projector22/lourie-basic-framework.git"
+        project_name="lourie-basic-framework"
         break
         ;;
 
