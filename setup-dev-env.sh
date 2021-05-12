@@ -28,34 +28,48 @@ install_php() {
 }
 
 configure_apache() {
-    sudo cp /etc/apache2/apache2.conf /etc/apache2/apache2.conf.bak
-    
+    apache_conf="/etc/apache2/apache2.conf"
+    echo "Backing up $apache_conf -> $apache_conf.bak"
+    sudo cp $apache_conf $apache_conf.bak
+    echo "Enabling .htaccess"
+    sudo sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/ s/AllowOverride None/AllowOverride All/' $apache_conf
+    sudo a2enmod rewrite
+    sudo service apache2 restart
+    echo "Complete\n"
 }
 
+configure_php() {
+    ini_path="/etc/php/7.4/apache2/php.ini"
+    size="200M"
+    echo "Backing up $ini_path -> $ini_path.bak"
+    sudo cp $ini_path $ini_path.bak
+    echo "Complete\n"
 
+    echo "Setting post_max_size & upload_max_filesize to $size"
+    upload=$(grep -F "post_max_size" $ini_path)
+    new_upload="post_max_size=$size"
+    sudo sed -i "s/$upload/$new_upload/" $ini_path
+
+    post=$(grep -F "upload_max_filesize" $ini_path)
+    new_post="upload_max_filesize=$size"
+    sudo sed -i "s/$post/$new_psot/" $ini_path
+    echo "Complete\n"
+}
 
 # Step 1 - Apt update and install git, openssh-server mysql-server
-# echo "Step one - install mysql, git and ssh\n"
-# install_mysql
+echo "Step one - install mysql, git and ssh\n"
+install_mysql
 
 # Step 2 - Set up mysql.
-# echo "Step 2. Set up a mysql user account"
-# read -p "Username: " mysql_username
-# read -p "Password: " mysql_password
+echo "Step 2. Set up a mysql user account"
+read -p "Username: " mysql_username
+read -p "Password: " mysql_password
+setup_mysql_user $mysql_username $mysql_password
 
-mysql_username='gp_user'
-mysql_password='ucoUnVNvqQ4YnRmM'
+echo "Step 3. Installing phpmyadmin php7.4-ldap"
+install_php
 
-# setup_mysql_user $mysql_username $mysql_password
+echo "Step 4. Configure Apache2 and PHP"
+configure_php
+configure_apache
 
-# echo "Step 3. Installing phpmyadmin php7.4-ldap"
-# install_php
-
-
-
-
-
-
-
-
-# sudo mysql --execute="SHOW DATABASES;"
