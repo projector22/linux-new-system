@@ -1,5 +1,11 @@
 #!/bin/bash
 
+##
+# @author       Gareth Palmer
+# @description  This script allows the @author to set up a dev environment on an Ubuntu type server.
+# @version      1.0
+##
+
 ## Install some basic tools, mysql-server, git and openssh-server
 install_mysql() {
     sudo apt update
