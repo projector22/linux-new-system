@@ -24,9 +24,11 @@ setup_mysql_user() {
 
 ## Install php & phpmyadmin
 install_php() {
-    sudo apt install phpmyadmin php7.4-ldap
+    sudo apt install phpmyadmin php7.4-ldap -yy
+    echo "Complete\n"
 }
 
+## Configure apache2.conf and enable .htaccess
 configure_apache() {
     apache_conf="/etc/apache2/apache2.conf"
     echo "Backing up $apache_conf -> $apache_conf.bak"
@@ -38,6 +40,7 @@ configure_apache() {
     echo "Complete\n"
 }
 
+## configure PHP to increase post and file size limits
 configure_php() {
     ini_path="/etc/php/7.4/apache2/php.ini"
     size="200M"
@@ -56,11 +59,10 @@ configure_php() {
     echo "Complete\n"
 }
 
-# Step 1 - Apt update and install git, openssh-server mysql-server
+
 echo "Step one - install mysql, git and ssh\n"
 install_mysql
 
-# Step 2 - Set up mysql.
 echo "Step 2. Set up a mysql user account"
 read -p "Username: " mysql_username
 read -p "Password: " mysql_password
@@ -72,4 +74,3 @@ install_php
 echo "Step 4. Configure Apache2 and PHP"
 configure_php
 configure_apache
-
