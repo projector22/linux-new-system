@@ -143,6 +143,10 @@ then
     DocumentRoot "$install_folder"
     ErrorLog \${APACHE_LOG_DIR}/error.log
     CustomLog \${APACHE_LOG_DIR}/access.log combined
+    <Directory "$install_folder">
+            # Apache 2.4
+            Require all granted
+    </Directory>
 </VirtualHost>
 EOT
         # 3. Enable Config
@@ -155,6 +159,7 @@ EOT
 
         echo -e "\nFinally you need to set up the host files. This must be done manually at this time:"
         echo -e "Windows Hosts File or Windows Subsystem for Linux (WSL):\tC:\Windows\System32\drivers\etc\hosts"
+        echo -e "In WSL, you want to add both of the following\n\t127.0.0.1 $local_url\n\t::1 $local_url"
         echo -e "Linux:\t/etc/hosts"
     fi
 fi
