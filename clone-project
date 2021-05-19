@@ -3,12 +3,14 @@
 ##
 # @author       Gareth Palmer
 # @description  This script allows the @author to clone various projects for the purposes of development
-# @version      1.0
+# @version      1.1
 ##
 
 clear
 
 # Choose a project
+
+check_url_setup=0
 
 while true 
 do
@@ -24,12 +26,14 @@ do
         1)
         uri="@gitlab.com/projector22/lourie-registration-system.git"
         project_name="lourie-registration-system"
+        check_url_setup=1
         break
         ;;
 
         2)
         uri="@gitlab.com/projector22/albatross-school-counsellor-booking-system.git"
         project_name="albatross-school-counsellor-booking-system"
+        check_url_setup=1
         break
         ;;
 
@@ -54,6 +58,7 @@ do
         6)
         uri="@gitlab.com/projector22/lourie-basic-framework.git"
         project_name="lourie-basic-framework"
+        check_url_setup=1
         break
         ;;
 
@@ -73,11 +78,13 @@ do
     case ${folder_choice} in
         1)
         folder=" ."
+        install_folder=${PWD}
         break
         ;;
 
         2)
         folder=""
+        install_folder=${PWD}/${project_name}
         break
         ;;
 
@@ -107,4 +114,52 @@ echo "https://projector22:${ssh_key}${uri}${folder}"
 
 # Execute the clone
 
+sudo chown $USER:www-data ${PWD}
+
 git clone https://projector22:${ssh_key}${uri}${folder}
+
+if [[ $check_url_setup -eq "1" ]]
+then
+    echo -e "\nWould you like to set a custom local\ty/n"
+    read -p "Choice: " response
+    if [ $response == 'y' ] || [ $response == 'Y' ]
+    then
+        echo -e "\nLocal URLs can be anything as long as it has a Top Level Domain (.com, .net etc.). Note .dev is blocked by most major browsers.\nA typical example of a correct domain is example.com"
+        echo "Enter the desired local URL:"
+        read -p "http://" local_url
+
+        # maybe check the URL
+
+        echo -e "\nCreating http://$local_url ..."
+        
+        # 1. Copy the default.conf file
+        sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/$local_url.conf
+
+        # 2. Rewrite the content
+        sudo tee /etc/apache2/sites-available/$local_url.conf <<EOT
+<VirtualHost *:80>
+    ServerAdmin admin@$local_url
+    ServerName $local_url
+    DocumentRoot "$install_folder"
+    ErrorLog \${APACHE_LOG_DIR}/error.log
+    CustomLog \${APACHE_LOG_DIR}/access.log combined
+    <Directory "$install_folder">
+            # Apache 2.4
+            Require all granted
+    </Directory>
+</VirtualHost>
+EOT
+        # 3. Enable Config
+        echo "\nEnabling config"
+        sudo a2ensite $local_url.conf
+
+        # 4. Restart apache
+        echo -e "\nRestarting Apache"
+        sudo systemctl restart apache2.service || sudo service mysql restart
+
+        echo -e "\nFinally you need to set up the host files. This must be done manually at this time:"
+        echo -e "Windows Hosts File or Windows Subsystem for Linux (WSL):\n\tC:\Windows\System32\drivers\etc\hosts"
+        echo -e "In WSL, you have to add both of the following:\n\t127.0.0.1 $local_url\n\t::1 $local_url"
+        echo -e "Linux:\n\t/etc/hosts"
+    fi
+fi
