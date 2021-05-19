@@ -114,7 +114,7 @@ echo "https://projector22:${ssh_key}${uri}${folder}"
 
 # Execute the clone
 
-sudo chown $USER:www-data $install_folder
+sudo chown $USER:www-data ${PWD}
 
 git clone https://projector22:${ssh_key}${uri}${folder}
 
