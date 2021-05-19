@@ -89,4 +89,4 @@ read mail
 git config --global user.name "$name"
 git config --global user.mail "$mail"
 
-echo -e "\nComplete"
+echo "\nComplete"
