@@ -140,7 +140,7 @@ then
 <VirtualHost *:80>
     ServerAdmin admin@$local_url
     ServerName $local_url
-    DocumentRoot $install_folder
+    DocumentRoot "$install_folder"
     ErrorLog \${APACHE_LOG_DIR}/error.log
     CustomLog \${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
