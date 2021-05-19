@@ -114,6 +114,8 @@ echo "https://projector22:${ssh_key}${uri}${folder}"
 
 # Execute the clone
 
+sudo chown $USER:www-data $install_folder
+
 git clone https://projector22:${ssh_key}${uri}${folder}
 
 if [[ $check_url_setup -eq "1" ]]
