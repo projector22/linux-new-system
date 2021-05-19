@@ -3,7 +3,7 @@
 ##
 # @author       Gareth Palmer
 # @description  This script allows the @author to clone various projects for the purposes of development
-# @version      1.0
+# @version      1.1
 ##
 
 clear
@@ -114,7 +114,7 @@ echo "https://projector22:${ssh_key}${uri}${folder}"
 
 # Execute the clone
 
-# git clone https://projector22:${ssh_key}${uri}${folder}
+git clone https://projector22:${ssh_key}${uri}${folder}
 
 if [[ $check_url_setup -eq "1" ]]
 then
@@ -133,16 +133,26 @@ then
         # 1. Copy the default.conf file
         sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/$local_url.conf
 
-        config = "<VirtualHost *:80>
+        # 2. Rewrite the content
+        sudo tee /etc/apache2/sites-available/$local_url.conf <<EOT
+<VirtualHost *:80>
     ServerAdmin admin@$local_url
     ServerName $local_url
     DocumentRoot $install_folder
     ErrorLog \${APACHE_LOG_DIR}/error.log
     CustomLog \${APACHE_LOG_DIR}/access.log combined
-</VirtualHost>"
+</VirtualHost>
+EOT
+        # 3. Enable Config
+        echo "\nEnabling config"
+        sudo a2ensite $local_url.conf
 
-    # WIP
-    # https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-18-04
+        # 4. Restart apache
+        echo -e "\nRestarting Apache"
+        sudo systemctl restart apache2.service || sudo service mysql restart
 
+        echo -e "\nFinally you need to set up the host files. This must be done manually at this time:"
+        echo -e "Windows Hosts File or Windows Subsystem for Linux (WSL):\tC:\Windows\System32\drivers\etc\hosts"
+        echo -e "Linux:\t/etc/hosts"
     fi
 fi
