@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo dpkg -i -R ~/Installers/FirstRun/
+
 sudo apt install apt-transport-https curl -yy
 
 wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signal-desktop-keyring.gpg
@@ -13,9 +15,10 @@ echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=
 
 up
 
-sudo apt install signal-desktop git neofetch htop ffmpeg youtube-dl brave-browser -yy
+sudo apt install signal-desktop git neofetch htop ffmpeg youtube-dl brave-browser flatpak -yy
 
-sudo dpkg -i -R ~/Installers/FirstRun/
+sudo apt install gnome-software-plugin-flatpak -yy
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 sudo snap install spotify
 sudo snap install chromium
@@ -24,3 +27,5 @@ sudo snap install joplin-desktop
 ~/bin/setup-dev-env.sh
 
 bash <(curl -s -S -L https://git.io/install-gam)
+
+sudo reboot now
