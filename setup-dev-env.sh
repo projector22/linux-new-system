@@ -30,7 +30,7 @@ setup_mysql_user() {
 
 ## Install php & phpmyadmin
 install_php() {
-    sudo apt install phpmyadmin php7.4-ldap -yy
+    sudo apt install phpmyadmin php8.0-ldap -yy
     echo "Complete\n"
 }
 
