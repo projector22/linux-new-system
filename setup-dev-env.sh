@@ -48,7 +48,7 @@ configure_apache() {
 
 ## configure PHP to increase post and file size limits
 configure_php() {
-    ini_path="/etc/php/7.4/apache2/php.ini"
+    ini_path="/etc/php/8.0/apache2/php.ini"
     size="200M"
     echo "Backing up $ini_path -> $ini_path.bak"
     sudo cp $ini_path $ini_path.bak
@@ -74,7 +74,7 @@ read -p "Username: " mysql_username
 read -p "Password: " mysql_password
 setup_mysql_user $mysql_username $mysql_password
 
-echo "Step 3. Installing phpmyadmin php7.4-ldap"
+echo "Step 3. Installing phpmyadmin php8.0-ldap"
 install_php
 
 echo "Step 4. Configure Apache2 and PHP"
