@@ -24,8 +24,10 @@ sudo snap install spotify
 sudo snap install chromium
 sudo snap install joplin-desktop
 
-~/bin/setup-dev-env.sh
+# ~/bin/setup-dev-env.sh
 
-bash <(curl -s -S -L https://git.io/install-gam)
+# bash <(curl -s -S -L https://git.io/install-gam)
 
-sudo reboot now
+# sudo reboot now
+
+echo "All complete"

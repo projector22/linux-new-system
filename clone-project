@@ -24,7 +24,8 @@ do
     read -p "Choice: " uri_choice
     case ${uri_choice} in
         1)
-        uri="@gitlab.com/projector22/lourie-registration-system.git"
+        # uri="@gitlab.com/projector22/lourie-registration-system.git"
+        uri="git@gitlab.com:projector22/lourie-registration-system.git"
         project_name="lourie-registration-system"
         check_url_setup=1
         break
@@ -116,7 +117,8 @@ echo "https://projector22:${ssh_key}${uri}${folder}"
 
 sudo chown $USER:www-data ${PWD}
 
-git clone https://projector22:${ssh_key}${uri}${folder}
+# git clone https://projector22:${ssh_key}${uri}${folder}
+git clone $uri
 
 if [[ $check_url_setup -eq "1" ]]
 then
