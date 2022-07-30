@@ -74,6 +74,12 @@ Possible arguments:
 - `--stop` - Stop the services.
 - `--restart` - Restart the services.
 
+### update-plex
+
+Called by invoking `update-plex`. Perform an upgrade to the `Plex Media Server`.
+
+Very early _Alpha_.
+
 ## Attribution
 
 Gareth Palmer [Github](https://github.com/projector22), [Gitlab](https://gitlab.com/projector22).
