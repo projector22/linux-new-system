@@ -1,0 +1,22 @@
+#!/bin/bash
+
+##
+# This function should either be placed into ~/bashrc, so it can be invoked
+# directly or can be called by calling a leading . or source before the command.
+#
+# @example  . mcd myNewDir - if not placed in ~/.bashrc
+# @example mcd myNewDir - if in ~/.bashrc
+#
+# @version 1.0.0
+#
+# @author Gareth Palmer
+##
+
+
+function mcd() {
+    mkdir -p "$PWD"/"$1"
+    cd "$PWD"/"$1" || return 1
+    return 0
+}
+
+mcd "$1"
