@@ -11,7 +11,7 @@ case $1 in
     echo "Stopping Apache2 & MySQL"
     sudo service apache2 stop
     sudo service mysql stop
-    sudo cron
+    # sudo cron
     ;;
 
     --restart)
