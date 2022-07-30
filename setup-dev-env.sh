@@ -30,7 +30,8 @@ setup_mysql_user() {
 
 ## Install php & phpmyadmin
 install_php() {
-    sudo apt install phpmyadmin php8.0-ldap -yy
+    sudo apt install php8.1 php8.1-ldap php8.1-gmp composer -yy
+    sudo apt install phpmyadmin
     echo "Complete\n"
 }
 
@@ -48,7 +49,7 @@ configure_apache() {
 
 ## configure PHP to increase post and file size limits
 configure_php() {
-    ini_path="/etc/php/8.0/apache2/php.ini"
+    ini_path="/etc/php/8.1/apache2/php.ini"
     size="200M"
     echo "Backing up $ini_path -> $ini_path.bak"
     sudo cp $ini_path $ini_path.bak
@@ -74,7 +75,7 @@ read -p "Username: " mysql_username
 read -p "Password: " mysql_password
 setup_mysql_user $mysql_username $mysql_password
 
-echo "Step 3. Installing phpmyadmin php8.0-ldap"
+echo "Step 3. Installing phpmyadmin php8.1-ldap"
 install_php
 
 echo "Step 4. Configure Apache2 and PHP"
