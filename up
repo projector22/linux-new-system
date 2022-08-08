@@ -43,6 +43,10 @@ if hash pihole 2>/dev/null; then
   echo -e "pihole update complete"
 fi
 
-# pip3 list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip3 install -U 
+if hash pip3 2>/dev/null; then
+  echo -e "\nPIP3"
+  pip3 list --outdated
+  # pip3 list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip3 install -U 
+fi
 
 echo -e "\n\nAll updates complete"
