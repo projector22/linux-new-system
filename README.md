@@ -12,7 +12,7 @@ git clone https://github.com/projector22/linux-new-system.git .
 
 ### up
 
-Called by invoking `up`. This will update a number of linux systems including `APT`, `SNAP`, `YUM`, `FLATPAK` & `Pi-hole`.
+Called by invoking `up`. This will update a number of linux systems including `APT` (or `nala`), `SNAP`, `YUM`, `FLATPAK` & `Pi-hole`.
 
 ### mcd
 

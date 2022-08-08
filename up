@@ -1,11 +1,17 @@
 #!/bin/bash
 echo Checking for updates - Apt, Yum, Flatpak
 
-if hash apt 2>/dev/null; then
+if hash nala 2>/dev/null; then
+  echo -e "\nAPT"
+  sudo nala upgrade -yy
+  sudo nala install --fix-broken
+  sudo nala autoremove -yy
+  sudo nala clean
+elif hash apt 2>/dev/null; then
   echo -e "\nAPT"
   sudo apt update
   sudo apt list --upgradable
-  sudo apt -f install
+  sudo apt --fix-broken install
   sudo apt full-upgrade -yy
   sudo apt autoremove -yy
   sudo apt clean -yy
