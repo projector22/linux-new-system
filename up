@@ -2,6 +2,7 @@
 echo Checking for updates - Apt, Yum, Flatpak
 
 if hash nala 2>/dev/null; then
+  # Repo: https://gitlab.com/volian/nala
   echo -e "\nAPT"
   sudo nala upgrade -yy
   sudo nala install --fix-broken
