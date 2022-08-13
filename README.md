@@ -1,8 +1,10 @@
-# linu
+# linux-new-system
+
+A few basic tools & scripts to install on new Linux installs
 
 ## Setup
 
-A few basic tools & scripts to install on new Linux installs
+To run on new Linux installs
 
 ```bash
 git clone https://github.com/projector22/linux-new-system.git .
