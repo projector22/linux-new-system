@@ -1,6 +1,10 @@
 #!/bin/bash
 echo Checking for updates - Apt, Yum, Flatpak
 
+echo -e "\nUpdating this script."
+cd ~/bin
+git pull
+
 if hash nala 2>/dev/null; then
   # Repo: https://gitlab.com/volian/nala
   echo -e "\nAPT"
