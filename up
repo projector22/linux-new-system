@@ -29,6 +29,7 @@ echo Checking for updates - Apt, Yum, Flatpak
 
 echo -e "\nUpdating this script."
 cd ~/bin
+git fetch
 git pull
 
 if hash nala 2>/dev/null; then
