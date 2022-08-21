@@ -1,4 +1,30 @@
 #!/bin/bash
+
+##
+# Linux Updater tool. Runs through a number of possible linuxy updating solutions and 
+# if they are available, run each updater.
+# 
+# Types Available:
+# - Apt
+# - Nala (Apt frontend)
+# - Snap
+# - Flatpak
+# - Yum
+# - PiHole
+# - Pip3 - Only lists updates.
+#
+# Would like to add:
+# - DNF
+# - Pacman
+#
+# Todo:
+# - Add flags to skip individual packages - for example, `--skip-pip`.
+# - Add flag to force Apt over Nala.
+#
+# Author:
+# Gareth Palmer [@projector22]
+##
+
 echo Checking for updates - Apt, Yum, Flatpak
 
 echo -e "\nUpdating this script."
@@ -7,7 +33,7 @@ git pull
 
 if hash nala 2>/dev/null; then
   # Repo: https://gitlab.com/volian/nala
-  echo -e "\nAPT"
+  echo -e "\nNALA"
   sudo nala upgrade -yy
   sudo nala install --fix-broken
   sudo nala autoremove -yy
@@ -48,7 +74,7 @@ if hash pihole 2>/dev/null; then
 fi
 
 if hash pip3 2>/dev/null; then
-  echo -e "\nPIP3"
+  echo -e "\nPIP3 - run pip3 install -U APPNAME to update an individual package"
   pip3 list --outdated
   # pip3 list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip3 install -U 
 fi
