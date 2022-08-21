@@ -74,7 +74,7 @@ if hash pihole 2>/dev/null; then
 fi
 
 if hash pip3 2>/dev/null; then
-  echo -e "\nPIP3 - run pip3 install -U APPNAME to update an individual package"
+  echo -e "\nPIP3 - run pip3 install -U APPNAME to update an individual package\n"
   pip3 list --outdated
   # pip3 list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip3 install -U 
 fi
