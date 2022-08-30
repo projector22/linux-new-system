@@ -92,7 +92,7 @@ then
   fi
 fi
 
-if [ $SKIP_APT -ne 0]
+if [ $SKIP_APT -ne 0 ]
 then
   if hash nala 2>/dev/null; then
     # Repo: https://gitlab.com/volian/nala
@@ -113,7 +113,7 @@ then
   fi
 fi
 
-if [ $SKIP_SNAP -ne 0]
+if [ $SKIP_SNAP -ne 0 ]
 then
   if hash snap 2>/dev/null; then
     echo -e "\nSNAP"
@@ -122,7 +122,7 @@ then
   fi
 fi
 
-if [ $SKIP_YUM -ne 0]
+if [ $SKIP_YUM -ne 0 ]
 then
   if hash yum 2>/dev/null; then
     echo -e "\nYUM"
@@ -131,7 +131,7 @@ then
   fi
 fi
 
-if [ $SKIP_FLATPAK -ne 0]
+if [ $SKIP_FLATPAK -ne 0 ]
 then
   if hash flatpak 2>/dev/null; then
     echo -e "\nFLATPAK"
@@ -140,7 +140,7 @@ then
   fi
 fi
 
-if [ $SKIP_PIHOLE -ne 0]
+if [ $SKIP_PIHOLE -ne 0 ]
 then
   if hash pihole 2>/dev/null; then
     echo -e "\nPIHOLE"
@@ -149,7 +149,7 @@ then
   fi
 fi
 
-if [ $SKIP_PIP -ne 0]
+if [ $SKIP_PIP -ne 0 ]
 then
   if hash pip3 2>/dev/null; then
     echo -e "\nPIP3 - run pip3 install -U APPNAME to update an individual package\n"
