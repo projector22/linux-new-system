@@ -20,22 +20,40 @@
 # Todo:
 # - Add flags to skip individual packages - for example, `--skip-pip`.
 # - Add flag to force Apt over Nala.
+# 
+# Arguments:
+# - --skip-self-update
 #
 # Author:
 # Gareth Palmer [@projector22]
 ##
 
+SKIP_SELF_UPDATE=1
+
+for i in "$@";
+do
+  case $1 in
+    --skip-self-update)
+    SKIP_SELF_UPDATE=0
+    shift
+    ;;
+  esac
+done
+
 echo Checking for updates - Apt, Yum, Flatpak
 
-echo -e "\nUpdating this script."
-cd ~/bin
-prev=$(git rev-list HEAD -n 1)
-git pull
-if test $prev != $(git rev-list HEAD -n 1)
+if [ $SKIP_SELF_UPDATE -ne 0 ]
 then
-  echo "Script Updated"
-  up
-  exit 0
+  echo -e "\nUpdating this script..."
+  cd ~/bin
+  prev=$(git rev-list HEAD -n 1)
+  git pull
+  if test $prev != $(git rev-list HEAD -n 1)
+  then
+    echo "Script Updated"
+    up --skip-self-update
+    exit 0
+  fi
 fi
 
 
@@ -88,4 +106,3 @@ if hash pip3 2>/dev/null; then
 fi
 
 echo -e "\n\nAll updates complete"
-echo "Cheese"
