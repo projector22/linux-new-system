@@ -31,7 +31,7 @@ echo -e "\nUpdating this script."
 cd ~/bin
 prev=$(git rev-list HEAD -n 1)
 git pull
-if test "$prev" -ne "$(git rev-list HEAD -n 1)"
+if test $prev != $(git rev-list HEAD -n 1)
 then
   echo "Script Updated"
   up
