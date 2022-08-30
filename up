@@ -33,6 +33,7 @@ prev=$(git rev-list HEAD -n 1)
 git pull
 if test $prev -ne $(git rev-list HEAD -n 1)
 then
+  echo "Script Updated"
   up
   exit 0
 fi
@@ -87,3 +88,4 @@ if hash pip3 2>/dev/null; then
 fi
 
 echo -e "\n\nAll updates complete"
+echo "Cake"
