@@ -31,7 +31,12 @@ echo -e "\nUpdating this script."
 cd ~/bin
 prev=$(git rev-list HEAD -n 1)
 git pull
-test $prev = $(git rev-list HEAD -n 1) || up && exit 0
+if test $prev -ne $(git rev-list HEAD -n 1)
+then
+  up
+  exit 0
+fi
+
 
 if hash nala 2>/dev/null; then
   # Repo: https://gitlab.com/volian/nala
