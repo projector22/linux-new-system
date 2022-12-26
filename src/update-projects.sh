@@ -1,5 +1,9 @@
 #!/bin/bash
 
+##
+# @param $1 Text feed back in uppercase
+# @param $2 Directory of tool
+##
 function general_update() {
     echo -n "Updating $1... "
     cd $APPS_DIR/$2
@@ -15,7 +19,8 @@ function update_up() {
 function update_all() {
     update_up
 
-    general_update lamp-tools lamp-tools
+    general_update "LAMP Tools" lamp-tools
+    general_update "Plex Updater Tool" plex-updater
 
     return 0
 }

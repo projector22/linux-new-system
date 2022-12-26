@@ -1,9 +1,14 @@
 #!/bin/bash
 
 declare -A TOOLS
+##
+# $1 = Symbolic link name.
+# $2 = containing folder name.
+##
 TOOLS=(
     ["up"]="up"
     ["lamp"]="lamp-tools"
+    ["update-plex"]="plex-updater"
 )
 
 for tool_name in "${!TOOLS[@]}"; do
