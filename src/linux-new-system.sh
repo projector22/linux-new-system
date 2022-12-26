@@ -16,6 +16,12 @@ function clear_apps() {
     return 0
 }
 
+function update_apps() {
+    cd $SRC_DIR
+    bash update-projects.sh
+    return 0
+}
+
 case $1 in
     --init)
     initialize_app
@@ -23,6 +29,10 @@ case $1 in
 
     --clear)
     clear_apps
+    ;;
+
+    --update)
+    update_apps
     ;;
 
     *)
