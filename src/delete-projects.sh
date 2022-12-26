@@ -9,6 +9,7 @@ TOOLS=(
     ["up"]="up"
     ["lamp"]="lamp-tools"
     ["update-plex"]="plex-updater"
+    ["update-lrs-live"]="update-lrs-live-tool"
 )
 
 for tool_name in "${!TOOLS[@]}"; do
