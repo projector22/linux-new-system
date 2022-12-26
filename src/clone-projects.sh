@@ -1,5 +1,5 @@
 #!/bin/bash
 
-cd ~/bin/apps
+cd $APPS_DIR
 git clone https://github.com/projector22/up.git
-ln -s ~/bin/apps/up/up.sh ~/bin/up
+ln -s $APPS_DIR/up/up.sh $INSTALL_DIR/up
