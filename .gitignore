@@ -1,3 +1,22 @@
+# Ignore everything in the root directory
+*
+
+# Except the .git folder and the .gitignore file
+!.git
+!.gitignore
+!CHANGELOG.md
+!licence
+!README.md
+
+# Except for .gitkeep, ignore the apps directory
+apps/*
+!apps/.gitkeep
+
+# Do not ignore the src directory.
+!src
+!src/.*
+
+# Misc
 .vscode/launch.json
 gam
 signal-desktop-keyring.gpg
