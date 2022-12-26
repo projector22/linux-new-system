@@ -1,14 +1,22 @@
 #!/bin/bash
 
-function update_up() {
-    echo "UPDATING up"
-    cd $APPS_DIR/up
+function general_update() {
+    echo -n "Updating $1... "
+    cd $APPS_DIR/$2
     git pull
+    return 0
+}
+
+function update_up() {
+    general_update up up
     return 0
 }
 
 function update_all() {
     update_up
+
+    general_update lamp-tools lamp-tools
+
     return 0
 }
 

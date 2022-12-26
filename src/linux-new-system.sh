@@ -6,13 +6,13 @@ export SRC_DIR=$INSTALL_DIR/src
 
 function initialize_app() {
     cd $SRC_DIR
-    sh clone-projects.sh
+    bash clone-projects.sh
     return 0
 }
 
 function clear_apps() {
     cd $SRC_DIR
-    sh delete-projects.sh
+    bash delete-projects.sh
     return 0
 }
 
