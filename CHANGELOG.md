@@ -5,6 +5,7 @@
 ### Added
 
 - Semantic versioning, starting with v0.1.0
+- Added tool `spotdll`.
 
 ### Change
 

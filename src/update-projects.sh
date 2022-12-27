@@ -22,6 +22,7 @@ function update_all() {
     general_update "LAMP Tools" lamp-tools
     general_update "Plex Updater Tool" plex-updater
     general_update "Update LRS Live Tool" update-lrs-live-tool
+    general_update "Update Spotdll" ubiquitous-sniffle
 
     return 0
 }

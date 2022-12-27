@@ -24,3 +24,9 @@ echo_and_cd "LRS LIVE UPDATER"
 git clone --quiet https://gitlab.com/projector22/update-lrs-live-tool.git
 ln -s $APPS_DIR/update-lrs-live-tool/update-lrs-live.sh $INSTALL_DIR/update-lrs-live
 echo "Done"
+
+echo_and_cd "SPOTDLL"
+git clone --quiet https://github.com/projector22/ubiquitous-sniffle.git
+ln -s $APPS_DIR/ubiquitous-sniffle/spotdll.py $INSTALL_DIR/spotdll
+ln -s $APPS_DIR/ubiquitous-sniffle/spotdll.json $INSTALL_DIR/spotdll.json
+echo "Done"
