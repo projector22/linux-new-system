@@ -10,7 +10,51 @@ To run on new Linux installs
 mkdir -p ~/bin && cd ~/bin && git clone https://github.com/projector22/linux-new-system.git . && lns --init
 ```
 
-## Tools
+## Arguments
+
+### `--init`
+
+#### Usage
+
+```sh
+lns --init
+```
+
+This tool initializes and installs all repositories used by LNS.
+
+### `--clear`
+
+#### Usage
+
+```sh
+lns --clear
+```
+
+This tool deletes any and all repos used by LNS.
+
+### `--update`
+
+#### Usage
+
+```sh
+lns --update
+```
+
+This tool performs an update by invoking a `git pull` on all the repos used by LNS.
+
+### `--reset`
+
+#### Usage
+
+```sh
+lns --reset
+```
+
+This tool deletes and reinitializes all the repos used by LNS
+
+## Available Tools
+
+*To be updated*
 
 ### up
 
