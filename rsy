@@ -1,6 +1,0 @@
-#!/bin/bash
-
-# the purpose of this script is to restart the synergy 2 service as and when needed
-
-sudo systemctl restart synergy
-echo "Synergy 2 Restart Complete"
