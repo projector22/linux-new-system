@@ -31,3 +31,8 @@ git clone --quiet https://github.com/projector22/ubiquitous-sniffle.git
 ln -s "$APPS_DIR"/ubiquitous-sniffle/spotdll.py "$INSTALL_DIR"/spotdll
 ln -s "$APPS_DIR"/ubiquitous-sniffle/spotdll.json "$INSTALL_DIR"/spotdll.json
 echo "Done"
+
+echo_and_cd "REBASE MASTER"
+git clone --quiet https://github.com/projector22/fictional-pancake.git
+ln -s "$APPS_DIR"/fictional-pancake/rebase-master.sh "$INSTALL_DIR"/rebase
+echo "Done"

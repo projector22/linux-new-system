@@ -12,6 +12,7 @@ TOOLS=(
     ["update-lrs-live"]="update-lrs-live-tool"
     ["spotdll"]="ubiquitous-sniffle"
     ["spotdll.json"]="ubiquitous-sniffle"
+    ["rebase"]="fictional-pancake"
 )
 
 for tool_name in "${!TOOLS[@]}"; do
