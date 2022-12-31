@@ -22,6 +22,7 @@ update_all() {
     general_update "Plex Updater Tool" plex-updater
     general_update "Update LRS Live Tool" update-lrs-live-tool
     general_update "Update Spotdll" ubiquitous-sniffle
+    general_update "Rebase Master" fictional-pancake
     return 0
 }
 
