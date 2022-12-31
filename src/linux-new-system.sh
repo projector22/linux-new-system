@@ -4,20 +4,20 @@ export INSTALL_DIR=~/bin
 export APPS_DIR=$INSTALL_DIR/apps
 export SRC_DIR=$INSTALL_DIR/src
 
-function initialize_app() {
-    cd $SRC_DIR
+initialize_app() {
+    cd $SRC_DIR || exit 1
     bash clone-projects.sh
     return 0
 }
 
-function clear_apps() {
-    cd $SRC_DIR
+clear_apps() {
+    cd $SRC_DIR || exit 1
     bash delete-projects.sh
     return 0
 }
 
-function update_apps() {
-    cd $SRC_DIR
+update_apps() {
+    cd $SRC_DIR || exit 1
     bash update-projects.sh
     return 0
 }
