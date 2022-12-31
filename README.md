@@ -7,7 +7,7 @@ A few basic tools & scripts to install on new Linux installs
 To run on new Linux installs
 
 ```bash
-git clone https://github.com/projector22/linux-new-system.git .
+mkdir -p ~/bin && cd ~/bin && git clone https://github.com/projector22/linux-new-system.git . && lns --init
 ```
 
 ## Tools
