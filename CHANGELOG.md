@@ -1,11 +1,15 @@
 # Linux New System
 
-## v0.1.0 - UNRELEASED
+## v0.1.0 - 2022-12-31
 
 ### Added
 
 - Semantic versioning, starting with v0.1.0
 - Added tool `spotdll`.
+- Added a basic set of tools to a single script `lns`, specifically
+  - `--init`
+  - `--clear`
+  - `--update`
 
 ### Change
 
@@ -17,4 +21,4 @@
 
 ### Issues Closed
 
-- #7 WIP
+- #7
