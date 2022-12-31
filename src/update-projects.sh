@@ -17,6 +17,10 @@ update_up() {
 }
 
 update_all() {
+    # Clone in any new projects
+    bash clone-projects.sh &> /dev/null
+    
+    # Perform updates
     update_up
     general_update "LAMP Tools" lamp-tools
     general_update "Plex Updater Tool" plex-updater

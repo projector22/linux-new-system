@@ -1,5 +1,13 @@
 # Linux New System
 
+## v0.1.3 - 2022-12-31
+
+### Changed
+
+- Added an instruction to clone any new projects in when performing updates.
+
+---
+
 ## v0.1.2 - 2022-12-31
 
 ### Added
