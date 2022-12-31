@@ -21,3 +21,5 @@ apps/*
 .vscode/launch.json
 gam
 signal-desktop-keyring.gpg
+
+!archive
