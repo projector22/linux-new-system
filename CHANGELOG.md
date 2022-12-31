@@ -1,5 +1,13 @@
 # Linux New System
 
+## v0.1.1 - 2022-12-31
+
+### Added
+
+- Added param to do a basic full factory reset to redownload all the LNS apps.
+
+---
+
 ## v0.1.0 - 2022-12-31
 
 ### Added

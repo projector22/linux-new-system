@@ -22,6 +22,12 @@ update_apps() {
     return 0
 }
 
+reset_apps() {
+    cd $SRC_DIR || exit 1
+    bash full-refresh.sh
+    return 0
+}
+
 case $1 in
     --init)
     initialize_app
@@ -33,6 +39,10 @@ case $1 in
 
     --update)
     update_apps
+    ;;
+
+    --reset)
+    reset_apps
     ;;
 
     *)
