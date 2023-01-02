@@ -27,6 +27,7 @@ update_all() {
     general_update "Update LRS Live Tool" update-lrs-live-tool
     general_update "Update Spotdll" ubiquitous-sniffle
     general_update "Rebase Master" fictional-pancake
+    general_update "Installer Tool" reimagined-bassoon
     return 0
 }
 
