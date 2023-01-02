@@ -13,6 +13,7 @@ TOOLS=(
     ["spotdll"]="ubiquitous-sniffle"
     ["spotdll.json"]="ubiquitous-sniffle"
     ["rebase"]="fictional-pancake"
+    ["installer"]="reimagined-bassoon"
 )
 
 for tool_name in "${!TOOLS[@]}"; do

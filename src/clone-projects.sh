@@ -36,3 +36,8 @@ echo_and_cd "REBASE MASTER"
 git clone --quiet https://github.com/projector22/fictional-pancake.git
 ln -s "$APPS_DIR"/fictional-pancake/rebase-master.sh "$INSTALL_DIR"/rebase
 echo "Done"
+
+echo_and_cd "INSTALLER TOOL"
+git clone --quiet https://github.com/projector22/reimagined-bassoon.git
+ln -s "$APPS_DIR"/reimagined-bassoon/src/install.sh "$INSTALL_DIR"/installer
+echo "Done"

@@ -1,5 +1,17 @@
 # Linux New System
 
+## v0.1.4 - 2023-01-02
+
+### Added
+
+- Added tool `reimagined-bassoon` for the purpose of installing.
+
+### Removed
+
+- `archive/new_system.sh`.
+
+---
+
 ## v0.1.3 - 2022-12-31
 
 ### Changed
