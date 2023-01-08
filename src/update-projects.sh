@@ -16,6 +16,14 @@ update_up() {
     return 0
 }
 
+update_spotdll() {
+    general_update "Spotdll" ubiquitous-sniffle
+    echo -n "Updating requirements for Spotdll... "
+    pip3 install -U -r "$APPS_DIR"/"$2"ubiquitous-sniffle/requirements.txt &> /dev/null
+    echo "Complete"
+    return 0
+}
+
 update_all() {
     # Clone in any new projects
     bash clone-projects.sh &> /dev/null
@@ -25,7 +33,7 @@ update_all() {
     general_update "LAMP Tools" lamp-tools
     general_update "Plex Updater Tool" plex-updater
     general_update "Update LRS Live Tool" update-lrs-live-tool
-    general_update "Update Spotdll" ubiquitous-sniffle
+    update_spotdll
     general_update "Rebase Master" fictional-pancake
     general_update "Installer Tool" reimagined-bassoon
     return 0

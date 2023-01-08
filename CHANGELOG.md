@@ -1,5 +1,21 @@
 # Linux New System
 
+## v0.1.5 - 2023-01-08
+
+### Added
+
+- Added the installing and updating of `SPOTDLL` pip3 requirements.
+
+### Changed
+
+- Added a catch for unlinking Symlinks only if they exist.
+
+### Removed
+
+- Removed `spotdll.json` as a linked file.
+
+---
+
 ## v0.1.4 - 2023-01-02
 
 ### Added
