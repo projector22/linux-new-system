@@ -19,7 +19,9 @@ TOOLS=(
 for tool_name in "${!TOOLS[@]}"; do
     # Unlink the symbolic links
     cd "$INSTALL_DIR" || exit 1
-    unlink "$tool_name"
+    if [ -L "$tool_name" ]; then
+        unlink "$tool_name"
+    fi
 
     # Delete the cloned directories
     cd "$APPS_DIR" || exit 1

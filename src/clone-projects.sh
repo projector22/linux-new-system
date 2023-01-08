@@ -29,7 +29,7 @@ echo "Done"
 echo_and_cd "SPOTDLL"
 git clone --quiet https://github.com/projector22/ubiquitous-sniffle.git
 ln -s "$APPS_DIR"/ubiquitous-sniffle/spotdll.py "$INSTALL_DIR"/spotdll
-ln -s "$APPS_DIR"/ubiquitous-sniffle/spotdll.json "$INSTALL_DIR"/spotdll.json
+pip3 install -r "$APPS_DIR"/ubiquitous-sniffle/requirements.txt &> /dev/null
 echo "Done"
 
 echo_and_cd "REBASE MASTER"
