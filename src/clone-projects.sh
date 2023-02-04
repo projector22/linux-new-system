@@ -24,6 +24,7 @@ echo "Done"
 echo_and_cd "LRS LIVE UPDATER"
 git clone --quiet https://gitlab.com/projector22/update-lrs-live-tool.git
 ln -s "$APPS_DIR"/update-lrs-live-tool/update-lrs-live.sh "$INSTALL_DIR"/update-lrs-live
+ln -s "$APPS_DIR"/update-lrs-live-tool/update-lrs-dev.sh "$INSTALL_DIR"/update-lrs-dev
 echo "Done"
 
 echo_and_cd "SPOTDLL"
