@@ -14,6 +14,7 @@ TOOLS=(
     ["spotdll.json"]="ubiquitous-sniffle"
     ["rebase"]="fictional-pancake"
     ["installer"]="reimagined-bassoon"
+    ["docker-update"]="docker-update"
 )
 
 for tool_name in "${!TOOLS[@]}"; do
