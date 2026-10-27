@@ -29,7 +29,6 @@ update_all() {
     
     # Perform updates
     update_up
-    general_update "Update LRS Live Tool" update-lrs-live-tool
     update_spotdll
     general_update "Docker Updater" docker-update
     return 0
