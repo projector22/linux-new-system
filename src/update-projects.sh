@@ -29,11 +29,8 @@ update_all() {
     
     # Perform updates
     update_up
-    general_update "Plex Updater Tool" plex-updater
     general_update "Update LRS Live Tool" update-lrs-live-tool
     update_spotdll
-    general_update "Rebase Master" fictional-pancake
-    general_update "Installer Tool" reimagined-bassoon
     general_update "Docker Updater" docker-update
     return 0
 }

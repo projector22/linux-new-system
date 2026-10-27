@@ -16,26 +16,10 @@ git clone --quiet https://github.com/projector22/plex-updater.git
 ln -s "$APPS_DIR"/plex-updater/update-plex.sh "$INSTALL_DIR"/update-plex
 echo "Done"
 
-echo_and_cd "LRS LIVE UPDATER"
-git clone --quiet https://gitlab.com/projector22/update-lrs-live-tool.git
-ln -s "$APPS_DIR"/update-lrs-live-tool/update-lrs-live.sh "$INSTALL_DIR"/update-lrs-live
-ln -s "$APPS_DIR"/update-lrs-live-tool/update-lrs-dev.sh "$INSTALL_DIR"/update-lrs-dev
-echo "Done"
-
 echo_and_cd "SPOTDLL"
 git clone --quiet https://github.com/projector22/ubiquitous-sniffle.git
 ln -s "$APPS_DIR"/ubiquitous-sniffle/spotdll.py "$INSTALL_DIR"/spotdll
 pip3 install -r "$APPS_DIR"/ubiquitous-sniffle/requirements.txt &> /dev/null
-echo "Done"
-
-echo_and_cd "REBASE MASTER"
-git clone --quiet https://github.com/projector22/fictional-pancake.git
-ln -s "$APPS_DIR"/fictional-pancake/rebase-master.sh "$INSTALL_DIR"/rebase
-echo "Done"
-
-echo_and_cd "INSTALLER TOOL"
-git clone --quiet https://github.com/projector22/reimagined-bassoon.git
-ln -s "$APPS_DIR"/reimagined-bassoon/src/install.sh "$INSTALL_DIR"/installer
 echo "Done"
 
 echo_and_cd "DOCKER UPDATE"
