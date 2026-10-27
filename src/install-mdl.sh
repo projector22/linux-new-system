@@ -32,6 +32,16 @@ if [[ ! $TAG =~ ^v[0-9] ]]; then
     exit 1
 fi
 
+if [ -x "$BIN_DIR/mdl" ]; then
+    # mdl --version prints "mdl vX.Y.Z"
+    CURRENT=$("$BIN_DIR/mdl" --version 2>/dev/null | awk '{print $2}' || true)
+    if [ "$CURRENT" = "$TAG" ]; then
+        echo "mdl $TAG is already up to date"
+        exit 0
+    fi
+    echo "Updating mdl ${CURRENT:-unknown} to $TAG"
+fi
+
 ASSET="mdl_${TAG}_linux_${ARCH}"
 BASE_URL="https://github.com/$REPO/releases/download/$TAG"
 
