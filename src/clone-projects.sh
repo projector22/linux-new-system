@@ -22,5 +22,5 @@ echo "Done"
 
 echo_and_cd "DOCKER UPDATE"
 git clone --quiet https://github.com/projector22/docker-update.git
-ln -s "$APP_DIR"/docker-update/docker-update.sh "$INSTALL_DIR"/docker-update
+ln -s "$APPS_DIR"/docker-update/docker-update.sh "$INSTALL_DIR"/docker-update
 echo "Done"
