@@ -18,7 +18,7 @@ update_up() {
 
 update_mdl() {
     echo "Updating mdl..."
-    install-mdl
+    "$SRC_DIR"/install-mdl
     echo "Complete"
     return 0
 }

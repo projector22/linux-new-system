@@ -17,8 +17,7 @@ ln -s "$APPS_DIR"/plex-updater/update-plex.sh "$INSTALL_DIR"/update-plex
 echo "Done"
 
 echo -n "Setting up MDL... "
-install-mdl
-echo
+"$SRC_DIR"/install-mdl
 echo "Done"
 
 echo_and_cd "DOCKER UPDATE"
