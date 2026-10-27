@@ -19,7 +19,6 @@ update_up() {
 update_spotdll() {
     general_update "Spotdll" ubiquitous-sniffle
     echo -n "Updating requirements for Spotdll... "
-    pip3 install -U -r "$APPS_DIR"/"$2"ubiquitous-sniffle/requirements.txt &> /dev/null
     echo "Complete"
     return 0
 }
