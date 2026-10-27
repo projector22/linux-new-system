@@ -18,7 +18,6 @@ echo "Done"
 
 echo -n "Setting up MDL... "
 "$SRC_DIR"/install-mdl.sh
-echo "Done"
 
 echo_and_cd "DOCKER UPDATE"
 git clone --quiet https://github.com/projector22/docker-update.git
