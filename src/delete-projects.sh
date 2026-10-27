@@ -29,4 +29,4 @@ for tool_name in "${!TOOLS[@]}"; do
     rm -rf "${TOOLS[$tool_name]}"
 done
 
-rm "$(go env GOPATH)/bin/mdl"
+uninstall-mdl
