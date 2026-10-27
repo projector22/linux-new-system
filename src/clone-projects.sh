@@ -18,10 +18,7 @@ echo "Done"
 
 echo_and_cd "MDL"
 go install github.com/projector22/ubiquitous-sniffle/cmd/mdl@latest
-# git clone --quiet https://github.com/projector22/ubiquitous-sniffle.git
-# ln -s "$APPS_DIR"/ubiquitous-sniffle/spotdll.py "$INSTALL_DIR"/spotdll
-# pip3 install -r "$APPS_DIR"/ubiquitous-sniffle/requirements.txt &> /dev/null
-# echo "Done"
+echo "Done"
 
 echo_and_cd "DOCKER UPDATE"
 git clone --quiet https://github.com/projector22/docker-update.git
