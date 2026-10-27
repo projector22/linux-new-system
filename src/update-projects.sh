@@ -18,7 +18,7 @@ update_up() {
 
 update_mdl() {
     echo "Updating mdl..."
-    go install github.com/projector22/ubiquitous-sniffle/cmd/mdl@latest > /dev/null
+    install-mdl
     echo "Complete"
     return 0
 }

@@ -17,7 +17,7 @@ ln -s "$APPS_DIR"/plex-updater/update-plex.sh "$INSTALL_DIR"/update-plex
 echo "Done"
 
 echo -n "Setting up MDL... "
-go install github.com/projector22/ubiquitous-sniffle/cmd/mdl@latest > /dev/null
+install mdl
 echo
 echo "Done"
 
