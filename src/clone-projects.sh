@@ -16,8 +16,9 @@ git clone --quiet https://github.com/projector22/plex-updater.git
 ln -s "$APPS_DIR"/plex-updater/update-plex.sh "$INSTALL_DIR"/update-plex
 echo "Done"
 
-echo_and_cd "MDL"
-go install github.com/projector22/ubiquitous-sniffle/cmd/mdl@latest
+echo -n "Setting up MDL... "
+go install github.com/projector22/ubiquitous-sniffle/cmd/mdl@latest > /dev/null
+echo
 echo "Done"
 
 echo_and_cd "DOCKER UPDATE"

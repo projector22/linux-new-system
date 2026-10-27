@@ -18,14 +18,8 @@ update_up() {
 
 update_mdl() {
     echo "Updating mdl..."
-    go install github.com/projector22/ubiquitous-sniffle/cmd/mdl@latest
+    go install github.com/projector22/ubiquitous-sniffle/cmd/mdl@latest > /dev/null
     echo "Complete"
-
-    # general_update "mdl" ubiquitous-sniffle
-    # echo
-    # make install
-    # echo
-    # echo "Complete"
     return 0
 }
 
