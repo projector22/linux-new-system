@@ -17,8 +17,10 @@ update_up() {
 }
 
 update_spotdll() {
-    general_update "Spotdll" ubiquitous-sniffle
-    echo -n "Updating requirements for Spotdll... "
+    general_update "mdl" ubiquitous-sniffle
+    echo
+    make install
+    echo
     echo "Complete"
     return 0
 }
