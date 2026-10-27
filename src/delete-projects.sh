@@ -28,3 +28,5 @@ for tool_name in "${!TOOLS[@]}"; do
     cd "$APPS_DIR" || exit 1
     rm -rf "${TOOLS[$tool_name]}"
 done
+
+rm "$(go env GOPATH)/bin/mdl"

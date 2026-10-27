@@ -16,12 +16,16 @@ update_up() {
     return 0
 }
 
-update_spotdll() {
-    general_update "mdl" ubiquitous-sniffle
-    echo
-    make install
-    echo
+update_mdl() {
+    echo "Updating mdl..."
+    go install github.com/projector22/ubiquitous-sniffle/cmd/mdl@latest
     echo "Complete"
+
+    # general_update "mdl" ubiquitous-sniffle
+    # echo
+    # make install
+    # echo
+    # echo "Complete"
     return 0
 }
 
@@ -31,7 +35,7 @@ update_all() {
     
     # Perform updates
     update_up
-    update_spotdll
+    update_mdl
     general_update "Docker Updater" docker-update
     return 0
 }
