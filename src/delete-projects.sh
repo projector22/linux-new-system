@@ -29,4 +29,4 @@ for tool_name in "${!TOOLS[@]}"; do
     rm -rf "${TOOLS[$tool_name]}"
 done
 
-"$SRC_DIR"/uninstall-mdl
+"$SRC_DIR"/uninstall-mdl.sh
