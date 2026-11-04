@@ -13,6 +13,8 @@
 # Do not ignore the src directory.
 !src/
 !src/*
+!src/php/
+!src/php/*
 
 # Except for .gitkeep, ignore the apps directory
 apps/*
