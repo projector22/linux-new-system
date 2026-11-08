@@ -1,12 +1,13 @@
 #!/bin/bash
 
+curl -fsSL https://raw.githubusercontent.com/projector22/up/master/src/uninstall.sh | bash
+
 declare -A TOOLS
 ##
 # $1 = Symbolic link name.
 # $2 = containing folder name.
 ##
 TOOLS=(
-    ["up"]="up"
     ["lamp"]="lamp-tools"
     ["update-plex"]="plex-updater"
     ["update-lrs-live"]="update-lrs-live-tool"

@@ -12,7 +12,7 @@ general_update() {
 }
 
 update_up() {
-    general_update up up
+    curl -fsSL https://raw.githubusercontent.com/projector22/up/master/src/update.sh | bash
     return 0
 }
 

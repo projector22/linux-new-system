@@ -6,10 +6,8 @@ echo_and_cd() {
     return 0
 }
 
-echo_and_cd "UP"
-git clone --quiet https://github.com/projector22/up.git
-ln -s "$APPS_DIR"/up/up.sh "$INSTALL_DIR"/up
-echo "Done"
+echo "Setting up UP"
+curl -fsSL https://raw.githubusercontent.com/projector22/up/master/src/install.sh | bash
 
 echo_and_cd "PLEX UPDATER"
 git clone --quiet https://github.com/projector22/plex-updater.git
