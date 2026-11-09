@@ -93,8 +93,8 @@ Simple Script for updating docker containers.
 If you have multiple PHP versions installed, this tool can be used to switch PHP versions.
 
 ```bash
-ln -s "$HOME"/.lns/php/php-version.sh "$HOME"/bin/php-version
-ln -s "$HOME"/.lns/php/phpv.sh "$HOME"/bin/phpv
+chmod +x "$HOME"/.lns/src/php/php-version.sh && ln -s "$HOME"/.lns/src/php/php-version.sh "$HOME"/bin/php-version
+chmod +x "$HOME"/.lns/src/php/phpv.sh && ln -s "$HOME"/.lns/src/php/phpv.sh "$HOME"/bin/phpv
 ```
 
 ### nv-top
@@ -102,7 +102,7 @@ ln -s "$HOME"/.lns/php/phpv.sh "$HOME"/bin/phpv
 A simple nvidia top project.
 
 ```bash
-ln -s "$HOME"/.lns/nv-top/nv-top.sh "$HOME"/bin/nv-top
+chmod +x "$HOME"/.lns/src/nv-top/nv-top.sh && ln -s "$HOME"/.lns/src/nv-top/nv-top.sh "$HOME"/bin/nv-top
 ```
 
 ### Plasma Tools
@@ -110,7 +110,7 @@ ln -s "$HOME"/.lns/nv-top/nv-top.sh "$HOME"/bin/nv-top
 A tool for helping with KDE Plasma
 
 ```bash
-ln -s "$HOME"/.lns/plasma/plasma-restart.sh "$HOME"/bin/plasma-restart
+chmod +x "$HOME"/.lns/src/plasma/plasma-restart.sh &&  ln -s "$HOME"/.lns/src/plasma/plasma-restart.sh "$HOME"/bin/plasma-restart
 ```
 
 ### mcd
