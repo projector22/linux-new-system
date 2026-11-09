@@ -1,51 +1,70 @@
 #!/bin/bash
 
-export INSTALL_DIR=~/bin
-export APPS_DIR=$INSTALL_DIR/apps
-export SRC_DIR=$INSTALL_DIR/src
+export INSTALL_DIR="$HOME/bin"
+export APPS_DIR="$INSTALL_DIR/apps"
+export SRC_DIR="$INSTALL_DIR/src"
+
+show_help() {
+    echo "Usage: $(basename "$0") [OPTION]"
+    echo
+    echo "Manage locally installed applications."
+    echo
+    echo "Options:"
+    echo "  --init       Clone and initialise projects"
+    echo "  --clear      Delete existing projects"
+    echo "  --update     Update all projects"
+    echo "  --reset      Perform a full refresh of all projects"
+    echo "  -h, --help   Display this help message"
+    echo
+    echo "Examples:"
+    echo "  $(basename "$0") --init"
+    echo "  $(basename "$0") --update"
+    echo "  $(basename "$0") --reset"
+}
 
 initialize_app() {
-    cd $SRC_DIR || exit 1
+    cd "$SRC_DIR" || exit 1
     bash clone-projects.sh
-    return 0
 }
 
 clear_apps() {
-    cd $SRC_DIR || exit 1
+    cd "$SRC_DIR" || exit 1
     bash delete-projects.sh
-    return 0
 }
 
 update_apps() {
-    cd $SRC_DIR || exit 1
+    cd "$SRC_DIR" || exit 1
     bash update-projects.sh
-    return 0
 }
 
 reset_apps() {
-    cd $SRC_DIR || exit 1
+    cd "$SRC_DIR" || exit 1
     bash full-refresh.sh
-    return 0
 }
 
-case $1 in
+case "$1" in
     --init)
-    initialize_app
-    ;;
+        initialize_app
+        ;;
 
     --clear)
-    clear_apps
-    ;;
+        clear_apps
+        ;;
 
     --update)
-    update_apps
-    ;;
+        update_apps
+        ;;
 
     --reset)
-    reset_apps
-    ;;
+        reset_apps
+        ;;
+
+    -h|--help)
+        show_help
+        ;;
 
     *)
-    echo "Please use one parse one of the appropriate arguments."
-    ;;
+        show_help
+        exit 1
+        ;;
 esac

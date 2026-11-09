@@ -15,7 +15,7 @@ ln -s "$APPS_DIR"/plex-updater/update-plex.sh "$INSTALL_DIR"/update-plex
 echo "Done"
 
 echo -n "Setting up MDL... "
-"$SRC_DIR"/install-mdl.sh
+"$SRC_DIR"/mdl/install-mdl.sh
 
 echo_and_cd "DOCKER UPDATE"
 git clone --quiet https://github.com/projector22/docker-update.git
