@@ -3,6 +3,7 @@
 curl -fsSL https://raw.githubusercontent.com/projector22/up/master/src/uninstall.sh | bash
 
 APP_DIR="$HOME/.lns/app"
+SRC_DIR="$HOME/.lns/src"
 BIN_DIR="$HOME/bin"
 
 declare -A TOOLS

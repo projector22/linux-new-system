@@ -1,6 +1,7 @@
 #!/bin/bash
 
 APP_DIR="$HOME/.lns/app"
+SRC_DIR="$HOME/.lns/src"
 BIN_DIR="$HOME/bin"
 mkdir -p "$APP_DIR"
 
