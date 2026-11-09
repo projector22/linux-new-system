@@ -1,12 +1,15 @@
 #!/bin/bash
 
+APP_DIR="$HOME/.lns/app"
+SRC_DIR="$HOME/.lns/src"
+
 ##
 # @param $1 Text feed back in uppercase
 # @param $2 Directory of tool
 ##
 general_update() {
     echo -n "Updating $1... "
-    cd "$APPS_DIR"/"$2" || exit 1
+    cd "$APP_DIR"/"$2" || exit 1
     git pull
     return 0
 }
