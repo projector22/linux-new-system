@@ -24,5 +24,5 @@ fi
 ln -s "$INSTALL_DIR/src/linux-new-system.sh" "$BIN_DIR/lns"
 
 printf " %s\n%s" "Done" "Configuring..."
-bash "$INSTALL_DIR/src/linux-new-system.sh" --init
+lns --init
 printf " %s\n" "Done"

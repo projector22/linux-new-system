@@ -1,8 +1,6 @@
 #!/bin/bash
 
-export INSTALL_DIR="$HOME/bin"
-export APPS_DIR="$INSTALL_DIR/apps"
-export SRC_DIR="$INSTALL_DIR/src"
+SRC_DIR="$HOME/.lns/src"
 
 show_help() {
     echo "Usage: $(basename "$0") [OPTION]"
