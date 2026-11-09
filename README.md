@@ -93,8 +93,24 @@ Simple Script for updating docker containers.
 If you have multiple PHP versions installed, this tool can be used to switch PHP versions.
 
 ```bash
-ln -s $HOME/.lns/php/php-version.sh $HOME/bin/
-ln -s $HOME/.lns/php/phpv.sh $HOME/bin/
+ln -s "$HOME"/.lns/php/php-version.sh "$HOME"/bin/php-version
+ln -s "$HOME"/.lns/php/phpv.sh "$HOME"/bin/phpv
+```
+
+### nv-top
+
+A simple nvidia top project.
+
+```bash
+ln -s "$HOME"/.lns/nv-top/nv-top.sh "$HOME"/bin/nv-top
+```
+
+### Plasma Tools
+
+A tool for helping with KDE Plasma
+
+```bash
+ln -s "$HOME"/.lns/plasma/plasma-restart.sh "$HOME"/bin/plasma-restart
 ```
 
 ### mcd
